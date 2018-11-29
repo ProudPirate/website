@@ -1,0 +1,11 @@
+img.logo-navbar {
+    width: 15rem !important;
+    height: 3rem !important;
+    border-radius: 5px;
+    /*border: 4px solid #ffffff;*/
+    
+}
+
+table.new-bdr{
+    border: 4px solid #ffffff;
+}

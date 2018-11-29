@@ -1,0 +1,18 @@
+{% extends 'routine/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container col-sm-12 col-lg-4">
+        <h1>{{ subject.sname }}</h1>
+        <h2>{{ subject.scode }}</h2>
+
+        <table class="table table-dark">
+            <tr>
+                {% for teacher in subject.teacher_set.all %}
+                    <td>{{ teacher.tid }} - {{ teacher.tname }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+{% endblock %}

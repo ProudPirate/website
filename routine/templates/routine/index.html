@@ -1,0 +1,17 @@
+{% extends 'routine/base.html' %}
+{% block content %}
+    <div class="container col-sm-12 col-lg-4 align-left">
+        {% if all_subjects %}
+            <h3>SUBJECTS</h3>
+            <table class="table table-dark">
+                {% for subject in all_subjects %}
+                    <tr>
+                        <td><a style="color: #00b0ff;" href="{% url 'routine:detail' subject.id %}">{{ subject.sname }}</a> </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <h3>No Subjects</h3>
+        {% endif %}
+    </div>
+{% endblock %}
