@@ -46,15 +46,10 @@
             </tbody>
         </table>
         </br>
-        {% for each in routine_list %}
-            {% for period_info in each.period_info %}
-                {% for routine_details in period_info.routine_details %}
-                    {% for detail in routine_details %}
-                        <p class="text-center">{{ detail.subject.name }} : {{ detail.taught_by }}</p>
-                    {% endfor %}
-                {% endfor %}
-            {% endfor %}
+        <div>
+        {% for each in sub_teach %}
+            <p class="text-center">{{ each }} : {{ each.taught_by }}</p>
         {% endfor %}
-
+        </div>
     </div>
 {% endblock %}

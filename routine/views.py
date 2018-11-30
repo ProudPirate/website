@@ -1,8 +1,9 @@
 from django.core.serializers import json
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
 from routine.services import get_section_routine
-from .models import Subject, Teacher, Period, Section
+from .models import Subject, Teacher, Period, Section, RoutineDetails
 
 
 def index(request):
@@ -28,4 +29,12 @@ def section_routine(request, sec_id):
     routine_list = get_section_routine(sec_id)
     periods = Period.objects.all().order_by('start_time')
 
-    return render(request, 'routine/section_routine.html', {'routine_list': routine_list,'periods':periods,'section':section})
+    routine_details = RoutineDetails.objects.filter(routine__in = section.routines.all())\
+                        .order_by('subject').distinct()
+
+    sub_teach = set(['{0} : {1}'.format(x.subject.code,x.taught_by.__str__()) for x in routine_details])
+
+    return render(request, 'routine/section_routine.html', {'routine_list': routine_list,
+                                                            'periods':periods,
+                                                            'section':section,
+                                                            'sub_teach':sub_teach})

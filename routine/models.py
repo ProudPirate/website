@@ -47,7 +47,7 @@ class Section(models.Model):
 
 class SectionGroup(models.Model):
     name = models.CharField(max_length=10)
-    section = models.ForeignKey(Section,on_delete=models.CASCADE)
+    section = models.ForeignKey(Section,on_delete=models.CASCADE,related_name='groups')
 
     def __str__(self):
         return '{0}/{1}'.format(self.name,self.section)
@@ -100,7 +100,7 @@ class Period(models.Model):
 class Routine(models.Model):
     day = models.IntegerField(choices=day_choices)
     period = models.ForeignKey(Period,on_delete=models.CASCADE)
-    section = models.ForeignKey(Section,on_delete=models.CASCADE)
+    section = models.ForeignKey(Section,on_delete=models.CASCADE,related_name='routines')
 
     def __str__(self):
         return '{0}/{1} : {2}'.format(day_choices[self.day-1][1],self.period,self.section)
