@@ -12,7 +12,8 @@
                 {% for departments in all_departments %}
                     <tr>
                         <td class="col-lg-2 ml-auto mr-auto">
-                            <a href="{% url 'dashboard:about' %}" class="btn btn-info btn-block"><i class="material-icons">group_work</i> {{ departments.name }} </a>
+                            <a href="{% url 'dashboard:about' %}" class="btn btn-info btn-block"><i
+                                    class="material-icons">group_work</i> {{ departments.name }} </a>
                         </td>
                     </tr>
                 {% endfor %}

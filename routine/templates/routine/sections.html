@@ -12,7 +12,8 @@
                 {% for sections in all_sections %}
                     <tr>
                         <td class="col-lg-2 ml-auto mr-auto">
-                            <a href="{% url 'routine:section_routine' sections.id %}" class="btn btn-info btn-block"><i class="material-icons">account_balance</i> {{ sections.name  }} </a>
+                            <a href="{% url 'routine:section_routine' sections.id %}" class="btn btn-info btn-block"><i
+                                    class="material-icons">account_balance</i> {{ sections.name }} </a>
                         </td>
                     </tr>
                 {% endfor %}

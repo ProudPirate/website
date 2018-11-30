@@ -1,11 +1,11 @@
 {% extends 'routine/base.html' %}
 {% block content %}
     <style>
-        table{
+        table {
             margin-top: 30px;
         }
 
-        table td, table th{
+        table td, table th {
             border: 1px solid #ccc !important;
             padding: 0.5rem 1rem;
         }
@@ -17,9 +17,9 @@
             <table class="table">
                 {% for teachers in all_teachers %}
                     <tr>
-                        <td >{{ teachers.department }}</td>
+                        <td>{{ teachers.department }}</td>
                         <td>-</td>
-                        <td >{{ teachers.name }} </td>
+                        <td>{{ teachers.name }} </td>
                     </tr>
                 {% endfor %}
             </table>
