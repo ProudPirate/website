@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
 from routine.services import get_section_routine
-from .models import Subject, Teacher, Period, Section, RoutineDetails
+from .models import Subject, Teacher, Period, Section, RoutineDetails, Department, Semester
 
 
 def index(request):
@@ -25,16 +25,29 @@ def information(request):
 
 
 def section_routine(request, sec_id):
-    section = get_object_or_404(Section,id=sec_id)
+    section = get_object_or_404(Section, id=sec_id)
     routine_list = get_section_routine(sec_id)
     periods = Period.objects.all().order_by('start_time')
 
-    routine_details = RoutineDetails.objects.filter(routine__in = section.routines.all())\
+    routine_details = RoutineDetails.objects.filter(routine__in=section.routines.all())\
                         .order_by('subject').distinct()
 
-    sub_teach = set(['{0} : {1}'.format(x.subject.code,x.taught_by.__str__()) for x in routine_details])
+    sub_teach = set(['{0} : {1}'.format(x.subject.code, x.taught_by.__str__()) for x in routine_details])
 
     return render(request, 'routine/section_routine.html', {'routine_list': routine_list,
-                                                            'periods':periods,
-                                                            'section':section,
-                                                            'sub_teach':sub_teach})
+                                                            'periods': periods,
+                                                            'section': section,
+                                                            'sub_teach': sub_teach})
+
+
+def departments(request):
+    all_departments = Department.objects.all()
+    context = {'all_departments': all_departments}
+    return render(request, 'routine/department.html', context)
+
+
+def sections(request, department_id):
+    all_sections = Section.objects.filter(department_id=department_id)
+    context = {'all_sections': all_sections}
+    return render(request, 'routine/sections.html', context)
+

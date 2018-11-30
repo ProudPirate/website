@@ -6,7 +6,9 @@
             <table class="table table-dark">
                 {% for subject in all_subjects %}
                     <tr>
-                        <td><a style="color: #00b0ff;" href="{% url 'routine:detail' subject.id %}">{{ subject.sname }}</a> </td>
+                        <td>{{ subject.department }}</td>
+                        <td>-</td>
+                        <td><a style="color: #00b0ff;" href="{% url 'routine:detail' subject.id %}">{{ subject.name }}</a></td>
                     </tr>
                 {% endfor %}
             </table>
