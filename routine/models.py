@@ -32,14 +32,13 @@ class Semester(models.Model):
         return 'Semester ' + str(self.number)
 
 
-
 class Section(models.Model):
     name = models.CharField(max_length=10)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE)
-    semester = models.ForeignKey(Semester,on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = [('name','department','semester')]
+        unique_together = [('name', 'department', 'semester')]
 
     def __str__(self):
         return self.name
@@ -47,16 +46,16 @@ class Section(models.Model):
 
 class SectionGroup(models.Model):
     name = models.CharField(max_length=10)
-    section = models.ForeignKey(Section,on_delete=models.CASCADE,related_name='groups')
+    section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='groups')
 
     def __str__(self):
-        return '{0}/{1}'.format(self.name,self.section)
+        return '{0}/{1}'.format(self.name, self.section)
 
 
 class Subject(models.Model):
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
     is_lab = models.BooleanField(default=False)
 
     def __str__(self):
@@ -71,50 +70,49 @@ class ClassRoom(models.Model):
 
 
 class ClassTeacherMapping(models.Model):
-    teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE)
-    class_room = models.ForeignKey(ClassRoom,on_delete=models.CASCADE)
-    section = models.ForeignKey(Section,on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    class_room = models.ForeignKey(ClassRoom, on_delete=models.CASCADE)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together =[('teacher','section')]
+        unique_together = [('teacher', 'section')]
 
     def __str__(self):
-        return '{0}/{1}/{2}'.format(self.teacher.name,self.department.name,self.class_room.name)
+        return '{0}/{1}/{2}'.format(self.teacher.name, self.department.name, self.class_room.name)
 
 
 class Period(models.Model):
-    number = models.IntegerField(default=1)
+    number = models.IntegerField(default=1, unique=True)
     start_time = models.TimeField()
     end_time = models.TimeField()
 
     def __str__(self):
-        return 'Period {0} : {1}-{2}'.format(self.number,self.start_time,self.end_time)
-
+        return '{1}-{2}'.format(self.number, self.start_time, self.end_time)
+        # return 'Period {0} :{1}-{2}'.format(self.number, self.start_time, self.end_time)
     def clean(self):
         if self.start_time > self.end_time:
             raise ValidationError('End time cannot be greater than start time')
 
 
-
 class Routine(models.Model):
     day = models.IntegerField(choices=day_choices)
-    period = models.ForeignKey(Period,on_delete=models.CASCADE)
-    section = models.ForeignKey(Section,on_delete=models.CASCADE,related_name='routines')
+    period = models.ForeignKey(Period, on_delete=models.CASCADE)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='routines')
 
     def __str__(self):
-        return '{0}/{1} : {2}'.format(day_choices[self.day-1][1],self.period,self.section)
+        return '{0}/{1} : {2}'.format(day_choices[self.day-1][1], self.period, self.section)
 
 
 class RoutineDetails(models.Model):
-    routine = models.ForeignKey(Routine,on_delete=models.CASCADE,related_name='details')
+    routine = models.ForeignKey(Routine, on_delete=models.CASCADE,related_name='details')
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     section_group = models.ForeignKey(SectionGroup, on_delete=models.CASCADE, null=True, blank=True)
     taught_by = models.ForeignKey(Teacher, on_delete=models.CASCADE)
 
     def __str__(self):
         grp_name = self.section_group.name if self.section_group is not None else 'All'
-        return '{0} : {1}'.format(self.subject.code,grp_name)
+        return '{0} : {1}'.format(self.subject.code, grp_name)
 
     def clean(self):
         if self.subject.is_lab == False:
@@ -123,7 +121,7 @@ class RoutineDetails(models.Model):
                 raise ValidationError('Class already present for given time slot.')
 
             if self.section_group is not None:
-                raise ValidationError('Group cannot be seperated for given subject.')
+                raise ValidationError('Group cannot be separated for given subject.')
 
         if self.subject.is_lab == True:
             details_count = self.routine.details.filter(section_group=self.section_group).count()

@@ -39,11 +39,11 @@
                         <i class="material-icons">info</i> About
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{% url 'dashboard:signup' %}" class="nav-link">
-                        <i class="material-icons">dashboard</i> Sign Up
-                    </a>
-                </li>
+                {#                <li class="nav-item">#}
+                {#                    <a href="{% url 'dashboard:signup' %}" class="nav-link">#}
+                {#                        <i class="material-icons">dashboard</i> Sign Up#}
+                {#                    </a>#}
+                {#                </li>#}
             </ul>
         </div>
     </div>
@@ -52,22 +52,20 @@
 {% endblock %}
 <footer class="footer footer-default fixed-bottom">
     <div class="container">
-        <nav class="float-left">
-            <ul>
-                <li>
-                    <a href="#">
-                        Submitted By
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright float-right">
-            &copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            , SUJIT RAJBANSHI 1ST16CS167 || UTSAV SHRESTHA 1ST16CS171
-        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    Submitted By
+                </a>
+            </li>
+            <li>
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                , SUJIT RAJBANSHI 1ST16CS167 || UTSAV SHRESTHA 1ST16CS171
+            </li>
+        </ul>
     </div>
 </footer>
 <script src="{% static 'js/core/jquery.min.js' %}" type="text/javascript"></script>

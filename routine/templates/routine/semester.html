@@ -4,29 +4,22 @@
 {% load static %}
 
 {% block content %}
-    <span class=" card card-header card-title text-center">DEPARTMENT NAME</span>
+    <span class="blockquote"></span>
     <div class="container col-sm-12 col-lg-6 ml-auto mr-auto">
-        <table class="col-lg-2 ml-auto mr-auto">
-            <tr>
-
-                <td class="col-lg-2 col-sm-12 text-center ml-auto mr-auto">
-                    <button class="btn btn-info btn-round btn-lg">
-                        <i class="material-icons">group_work</i> SEMESTER 1
-                    </button>
-                </td>
-
-
-            </tr>
-            <tr>
-
-                <td class="col-lg-2 text-center ml-auto mr-auto">
-                    <button class="btn btn-info btn-round btn-lg">
-                        <i class="material-icons">group_work</i> SEMESTER 2
-                    </button>
-                </td>
-
-
-            </tr>
+        <table class="col-lg-2 ml-auto mr-auto text-center">
+            {% if all_departments %}
+                <h3 class="text-center"> DEPARTMENTS</h3>
+                {% for departments in all_departments %}
+                    <tr>
+                        <td class="col-lg-2 ml-auto mr-auto">
+                            <a href="{% url 'dashboard:about' %}" class="btn btn-info btn-block"><i
+                                    class="material-icons">group_work</i> {{ departments.name }} </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <h3>No Departments</h3>
+            {% endif %}
         </table>
     </div>
 {% endblock %}

@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
     <style>
-        table{
+        table {
             margin-top: 30px;
         }
 
-        table td, table th{
+        table td, table th {
             border: 1px solid #ccc !important;
             padding: 0.5rem 1rem;
         }
@@ -17,39 +17,39 @@
         <h2 class="text-center">{{ section }}</h2>
         <table class="table-bordered ml-auto mr-auto text-center">
             <thead>
-                <tr class="bg-dark text-white">
-                    <th>Day</th>
-                    {% for each in periods %}
+            <tr class="bg-dark text-white">
+                <th>Day</th>
+                {% for each in periods %}
                     <th>{{ each }}</th>
-                    {% endfor %}
-                </tr>
+                {% endfor %}
+            </tr>
             </thead>
             <tbody>
-                {% for each in routine_list %}
+            {% for each in routine_list %}
                 <tr>
                     <td>{{ each.day_info.name }}</td>
                     {% for period_info in each.period_info %}
                         <td>
-                        {% for routine_details in period_info.routine_details %}
-                            {% for detail in routine_details %}
-                                {% if forloop.counter > 1 %}
-                                    </br>
-                                {% endif %}
+                            {% for routine_details in period_info.routine_details %}
+                                {% for detail in routine_details %}
+                                    {% if forloop.counter > 1 %}
+                                        </br>
+                                    {% endif %}
 
-                                {{ detail }}
+                                    {{ detail }}
+                                {% endfor %}
                             {% endfor %}
-                        {% endfor %}
                         </td>
                     {% endfor %}
                 </tr>
-                {% endfor %}
+            {% endfor %}
             </tbody>
         </table>
         </br>
         <div>
-        {% for each in sub_teach %}
-            <p class="text-center">{{ each }} : {{ each.taught_by }}</p>
-        {% endfor %}
+            {% for each in sub_teach %}
+                <p class="text-center">{{ each }}</p>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
