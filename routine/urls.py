@@ -11,4 +11,5 @@ urlpatterns = [
     # details
     re_path(r'^(?P<subject_id>[0-9]+)/$', views.detail, name='detail'),
     re_path(r'^teacher/$', views.information, name='information'),
+    re_path(r'^section/(?P<sec_id>[0-9]+)/$', views.section_routine, name='section_routine'),
 ]

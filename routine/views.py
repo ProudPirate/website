@@ -1,9 +1,8 @@
+from django.core.serializers import json
 from django.shortcuts import render, get_object_or_404
-# from django.http import Http404
-# from django.http import HttpResponse
-# from django.template import loader
-from .models import Subject, Teacher
-# Create your views here.
+
+from routine.services import get_section_routine
+from .models import Subject, Teacher, Period
 
 
 def index(request):
@@ -23,3 +22,9 @@ def information(request):
     context = {'all_teachers': all_teachers}
     return render(request, 'routine/teachers.html', context)
 
+
+def section_routine(request, sec_id):
+    routine_list = get_section_routine(sec_id)
+    periods = Period.objects.all().order_by('start_time')
+    print(routine_list)
+    return render(request, 'routine/section_routine.html', {'routine_list': routine_list,'periods':periods})
