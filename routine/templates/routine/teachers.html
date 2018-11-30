@@ -12,9 +12,7 @@
                 {% for teacher in all_teachers %}
                     <tr>
                         <td class="col-lg-2 ml-auto mr-auto">
-                            <button class="btn btn-info btn-round btn-lg">
-                                <i class="material-icons">account_balance</i> {{ teacher.name }}
-                            </button>
+                            <a href="{% url 'routine:teacher_routine' teacher.id %}" class="btn-block btn btn-info btn-lg"> <i class="material-icons">account_balance</i> {{ teacher.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -68,6 +68,6 @@ def sections(request, department_id):
 
 
 def teachers(request, department_id):
-    all_teachers = Section.objects.filter(department_id=department_id)
+    all_teachers = Teacher.objects.filter(department_id=department_id)
     context = {'all_teachers': all_teachers}
     return render(request, 'routine/teachers.html', context)
