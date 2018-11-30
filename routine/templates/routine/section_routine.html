@@ -14,7 +14,7 @@
     </style>
 
     <div class="container col-sm-12 col-lg-12 align-left ml-auto mr-auto">
-
+        <h2 class="text-center">{{ section }}</h2>
         <table class="table-bordered ml-auto mr-auto text-center">
             <thead>
                 <tr class="bg-dark text-white">
@@ -45,6 +45,16 @@
                 {% endfor %}
             </tbody>
         </table>
+        </br>
+        {% for each in routine_list %}
+            {% for period_info in each.period_info %}
+                {% for routine_details in period_info.routine_details %}
+                    {% for detail in routine_details %}
+                        <p class="text-center">{{ detail.subject.name }} : {{ detail.taught_by }}</p>
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
 
     </div>
 {% endblock %}

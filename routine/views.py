@@ -2,7 +2,7 @@ from django.core.serializers import json
 from django.shortcuts import render, get_object_or_404
 
 from routine.services import get_section_routine
-from .models import Subject, Teacher, Period
+from .models import Subject, Teacher, Period, Section
 
 
 def index(request):
@@ -24,7 +24,8 @@ def information(request):
 
 
 def section_routine(request, sec_id):
+    section = get_object_or_404(Section,id=sec_id)
     routine_list = get_section_routine(sec_id)
     periods = Period.objects.all().order_by('start_time')
-    print(routine_list)
-    return render(request, 'routine/section_routine.html', {'routine_list': routine_list,'periods':periods})
+
+    return render(request, 'routine/section_routine.html', {'routine_list': routine_list,'periods':periods,'section':section})
