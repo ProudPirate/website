@@ -1,0 +1,50 @@
+{% extends 'routine/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        table {
+            margin-top: 30px;
+        }
+
+        table td, table th {
+            border: 1px solid #ccc !important;
+            padding: 0.5rem 1rem;
+        }
+
+    </style>
+
+    <div class="container col-sm-12 col-lg-12 align-left ml-auto mr-auto">
+        <h2 class="text-center">{{ teacher }}</h2>
+        <table class="table-bordered ml-auto mr-auto text-center">
+            <thead>
+            <tr class="bg-dark text-white">
+                <th>Day</th>
+                {% for each in periods %}
+                    <th>{{ each }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for each in routine_list %}
+                <tr>
+                    <td>{{ each.day_info.name }}</td>
+                    {% for period_info in each.period_info %}
+                        <td>
+                            {% for routine_details in period_info.routine_details %}
+                                {% for detail in routine_details %}
+                                    {% if forloop.counter > 1 %}
+                                        </br>
+                                    {% endif %}
+
+                                    {{ detail }}
+                                {% endfor %}
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </br>
+    </div>
+{% endblock %}

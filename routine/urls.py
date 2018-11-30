@@ -13,5 +13,6 @@ urlpatterns = [
     re_path(r'^teacher/$', views.information, name='information'),
     re_path(r'^departments/$', views.departments, name='departments'),
     re_path(r'^departments/sections/(?P<sec_id>[0-9]+)/$', views.section_routine, name='section_routine'),
+    re_path(r'^departments/teacher/(?P<teacher_id>[0-9]+)/$', views.teacher_routine, name='teacher_routine'),
     re_path(r'^departments/(?P<department_id>[0-9]+)/$', views.sections, name='sections'),
 ]

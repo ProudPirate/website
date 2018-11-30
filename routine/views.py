@@ -2,7 +2,7 @@ from django.core.serializers import json
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
-from routine.services import get_section_routine
+from routine.services import get_section_routine, get_teacher_routine
 from .models import Subject, Teacher, Period, Section, RoutineDetails, Department, Semester
 
 
@@ -26,7 +26,7 @@ def information(request):
 
 def section_routine(request, sec_id):
     section = get_object_or_404(Section, id=sec_id)
-    routine_list = get_section_routine(sec_id)
+    routine_list = get_section_routine(section_id=sec_id)
     periods = Period.objects.all().order_by('start_time')
 
     routine_details = RoutineDetails.objects.filter(routine__in=section.routines.all())\
@@ -38,6 +38,15 @@ def section_routine(request, sec_id):
                                                             'periods': periods,
                                                             'section': section,
                                                             'sub_teach': sub_teach})
+
+
+def teacher_routine(request, teacher_id):
+    teacher = get_object_or_404(Teacher, id=teacher_id)
+    routine_list = get_teacher_routine(taught_by__id=teacher_id)
+    periods = Period.objects.all().order_by('start_time')
+    return render(request, 'routine/teacher_routine.html', {'routine_list': routine_list,
+                                                            'periods': periods,
+                                                            'teacher': teacher})
 
 
 def departments(request):

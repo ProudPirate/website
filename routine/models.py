@@ -101,7 +101,7 @@ class Routine(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='routines')
 
     def __str__(self):
-        return '{0}/{1} : {2}'.format(day_choices[self.day-1][1], self.period, self.section)
+        return '{0}/{1} : {2}'.format(day_choices[self.day-2][1], self.period, self.section)
 
 
 class RoutineDetails(models.Model):
