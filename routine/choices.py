@@ -11,7 +11,7 @@ teacher_post = (
 )
 
 day_choices = (
-    (1, 'Sunday'),
+    # (1, 'Sunday'),
     (2, 'Monday'),
     (3, 'Tuesday'),
     (4, 'Wednesday'),

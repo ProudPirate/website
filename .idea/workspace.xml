@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cee080b-2e24-4ab6-8104-69d03b066acb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routine/templates/routine/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/routine/templates/routine/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routine/templates/routine/section_routine.html" beforeDir="false" afterPath="$PROJECT_DIR$/routine/templates/routine/section_routine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routine/templates/routine/sections.html" beforeDir="false" afterPath="$PROJECT_DIR$/routine/templates/routine/sections.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routine/templates/routine/semester.html" beforeDir="false" afterPath="$PROJECT_DIR$/routine/templates/routine/semester.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routine/templates/routine/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/routine/templates/routine/teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routine/choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/routine/choices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routine/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/routine/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +39,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routine/templates/routine/detail.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routine/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="16" lean-forward="true" selection-end-line="18" />
+            <state relative-caret-position="357">
+              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,6 +73,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routine/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routine/templates/routine/semester.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -91,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routine/templates/routine/teachers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="277">
+              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -112,26 +123,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routine/templates/routine/section_routine.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+            <state relative-caret-position="204">
+              <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routine/templates/routine/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-47">
-              <caret line="65" column="73" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routine/templates/routine/department.html">
+        <entry file="file://$PROJECT_DIR$/routine/choices.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -160,6 +162,8 @@
       <find>detailss</find>
       <find>Routinedetail</find>
       <find>Routine details</find>
+      <find>details</find>
+      <find>ss</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,7 +189,6 @@
         <option value="$PROJECT_DIR$/routine/templates/routine/department.html" />
         <option value="$PROJECT_DIR$/routine/urls.py" />
         <option value="$PROJECT_DIR$/routine/views.py" />
-        <option value="$PROJECT_DIR$/routine/models.py" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/about.html" />
         <option value="$PROJECT_DIR$/dashboard/templates/dashboard/signup.html" />
         <option value="$PROJECT_DIR$/routine/templates/routine/base.html" />
@@ -193,6 +196,8 @@
         <option value="$PROJECT_DIR$/routine/templates/routine/sections.html" />
         <option value="$PROJECT_DIR$/routine/templates/routine/semester.html" />
         <option value="$PROJECT_DIR$/routine/templates/routine/teacher.html" />
+        <option value="$PROJECT_DIR$/routine/choices.py" />
+        <option value="$PROJECT_DIR$/routine/models.py" />
       </list>
     </option>
   </component>
@@ -250,47 +255,6 @@
               <item name="routine" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="routine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="website" type="b2602c69:ProjectViewProjectNode" />
@@ -381,12 +345,12 @@
       <workItem from="1543558670452" duration="2138000" />
       <workItem from="1543564875985" duration="1349000" />
       <workItem from="1543566924887" duration="13434000" />
-      <workItem from="1543583259898" duration="590000" />
+      <workItem from="1543583259898" duration="2287000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63403000" />
+    <option name="totallyTimeSpent" value="65100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,7 +370,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4968254" weight="0.23963134" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4968254" visible="true" weight="0.23963134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39938557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -415,7 +379,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32872504" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.49603173" weight="0.32718894" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50396824" side_tool="true" weight="0.25345623" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49444443" visible="true" weight="0.37173578" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49444443" weight="0.37173578" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49920633" weight="0.32718894" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32872504" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -594,32 +558,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routine/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routine/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routine/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -696,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routine/templates/routine/section_routine.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routine/templates/routine/sections.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -726,8 +663,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routine/templates/routine/teachers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="277">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routine/templates/routine/section_routine.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routine/choices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routine/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routine/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -83,7 +83,7 @@ class ClassTeacherMapping(models.Model):
 
 
 class Period(models.Model):
-    number = models.IntegerField(default=1)
+    number = models.IntegerField(default=1, unique=True)
     start_time = models.TimeField()
     end_time = models.TimeField()
 
@@ -97,15 +97,15 @@ class Period(models.Model):
 
 class Routine(models.Model):
     day = models.IntegerField(choices=day_choices)
-    period = models.ForeignKey(Period,on_delete=models.CASCADE)
-    section = models.ForeignKey(Section,on_delete=models.CASCADE, related_name='routines')
+    period = models.ForeignKey(Period, on_delete=models.CASCADE)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='routines')
 
     def __str__(self):
         return '{0}/{1} : {2}'.format(day_choices[self.day-1][1], self.period, self.section)
 
 
 class RoutineDetails(models.Model):
-    routine = models.ForeignKey(Routine,on_delete=models.CASCADE,related_name='details')
+    routine = models.ForeignKey(Routine, on_delete=models.CASCADE,related_name='details')
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     section_group = models.ForeignKey(SectionGroup, on_delete=models.CASCADE, null=True, blank=True)
     taught_by = models.ForeignKey(Teacher, on_delete=models.CASCADE)
