@@ -39,7 +39,7 @@ class Section(models.Model):
     semester = models.ForeignKey(Semester,on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = [('department','semester')]
+        unique_together = [('name','department','semester')]
 
     def __str__(self):
         return self.name
