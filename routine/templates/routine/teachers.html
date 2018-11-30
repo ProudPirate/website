@@ -7,13 +7,13 @@
     <span class="blockquote"></span>
     <div class="container col-sm-12 col-lg-6 ml-auto mr-auto">
         <table class="col-lg-2 ml-auto mr-auto">
-            {% if all_departments %}
-                <h3>TEACHERS</h3>
-                {% for departments in all_departments %}
+            {% if all_teachers %}
+                <h3 class="text-center">TEACHERS</h3>
+                {% for teacher in all_teachers %}
                     <tr>
                         <td class="col-lg-2 ml-auto mr-auto">
                             <button class="btn btn-info btn-round btn-lg">
-                                <i class="material-icons">account_balance</i> {{ departments.name }}
+                                <i class="material-icons">account_balance</i> {{ teacher.name }}
                             </button>
                         </td>
                     </tr>

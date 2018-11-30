@@ -55,8 +55,19 @@ def departments(request):
     return render(request, 'routine/department.html', context)
 
 
+def departments_teachers(request):
+    all_departments = Department.objects.all()
+    context = {'all_departments': all_departments}
+    return render(request, 'routine/department_teacher.html', context)
+
+
 def sections(request, department_id):
     all_sections = Section.objects.filter(department_id=department_id)
     context = {'all_sections': all_sections}
     return render(request, 'routine/sections.html', context)
 
+
+def teachers(request, department_id):
+    all_teachers = Section.objects.filter(department_id=department_id)
+    context = {'all_teachers': all_teachers}
+    return render(request, 'routine/teachers.html', context)
