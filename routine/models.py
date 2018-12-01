@@ -87,6 +87,9 @@ class Period(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
 
+    class Meta:
+        unique_together = [('start_time', 'end_time')]
+
     def __str__(self):
         return '{1}-{2}'.format(self.number, self.start_time, self.end_time)
         # return 'Period {0} :{1}-{2}'.format(self.number, self.start_time, self.end_time)
@@ -95,10 +98,14 @@ class Period(models.Model):
             raise ValidationError('End time cannot be greater than start time')
 
 
+
 class Routine(models.Model):
     day = models.IntegerField(choices=day_choices)
     period = models.ForeignKey(Period, on_delete=models.CASCADE)
     section = models.ForeignKey(Section, on_delete=models.CASCADE, related_name='routines')
+
+    class Meta:
+        unique_together = [('day', 'period', 'section')]
 
     def __str__(self):
         return '{0}/{1} : {2}'.format(day_choices[self.day-2][1], self.period, self.section)
