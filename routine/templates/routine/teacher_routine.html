@@ -27,16 +27,15 @@
             <tbody>
             {% for each in routine_list %}
                 <tr>
-                    <td>{{ each.day_info.name }}</td>
+                    <th>{{ each.day_info.name }}</th>
                     {% for period_info in each.period_info %}
                         <td>
                             {% for routine_details in period_info.routine_details %}
                                 {% for detail in routine_details %}
                                     {% if forloop.counter > 1 %}
-                                        </br>
+                                        <br/>
                                     {% endif %}
-
-                                    {{ detail }}
+                                    {{ detail }} <br/> <b>{{ detail.routine.section}}</b>
                                 {% endfor %}
                             {% endfor %}
                         </td>

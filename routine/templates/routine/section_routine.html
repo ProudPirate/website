@@ -27,7 +27,7 @@
             <tbody>
             {% for each in routine_list %}
                 <tr>
-                    <td>{{ each.day_info.name }}</td>
+                    <th>{{ each.day_info.name }}</th>
                     {% for period_info in each.period_info %}
                         <td>
                             {% for routine_details in period_info.routine_details %}
@@ -46,10 +46,13 @@
             </tbody>
         </table>
         </br>
-        <div class = "container">
+    <div class="container ml-auto mr-auto">
+        <table class = "col-sm-12 col-lg-12">
+        <tr>
             {% for each in sub_teach %}
-                <p>{{ each }}</p>
+                <b><td class="container-fluid"> {{ each }} </td> </b>
             {% endfor %}
-        </div>
+        </tr>
+        </table>
     </div>
 {% endblock %}

@@ -44,6 +44,7 @@ def teacher_routine(request, teacher_id):
     teacher = get_object_or_404(Teacher, id=teacher_id)
     routine_list = get_teacher_routine(taught_by__id=teacher_id)
     periods = Period.objects.all().order_by('start_time')
+    print(routine_list)
     return render(request, 'routine/teacher_routine.html', {'routine_list': routine_list,
                                                             'periods': periods,
                                                             'teacher': teacher})

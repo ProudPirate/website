@@ -53,7 +53,7 @@ class SectionGroup(models.Model):
 
 
 class Subject(models.Model):
-    code = models.CharField(max_length=10)
+    code = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     is_lab = models.BooleanField(default=False)
