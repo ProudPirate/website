@@ -47,12 +47,12 @@
         </table>
         </br>
     <div class="container ml-auto mr-auto">
-        <table class = "col-sm-12 col-lg-12">
-        <tr>
-            {% for each in sub_teach %}
-                <b><td class="container-fluid"> {{ each }} </td> </b>
+        <table class = "mr-auto ml-auto border-0">
+           {% for each in sub_teach %}
+               <tr>
+                   <b><td class=""> {{ each }} </td> </b>
+               </tr>
             {% endfor %}
-        </tr>
         </table>
     </div>
 {% endblock %}
