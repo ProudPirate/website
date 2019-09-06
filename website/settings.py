@@ -31,6 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '192.168.0.102',
     '127.0.0.1',
+    'https://myroutine.herokuapp.com/',
 ]
 
 # Application definition
@@ -120,6 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
