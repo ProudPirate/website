@@ -2,14 +2,13 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="page-header header-filter" data-parallax="true"
-         style="background-image: url('{% static 'images/college.jpg' %}')">
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url('{% static 'images/college.jpg' %}')">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto">
                     <div class="title text-center">
-                        <h1>Routine Generation System</h1>
-                        <h3 class="brand text-center">WT Mini Project</h3>
+                        <h1>Routine Management System</h1>
+                        <h3 class="brand text-center">Web Technology Mini Project</h3>
                     </div>
                 </div>
             </div>
@@ -23,25 +22,25 @@
 
                         <div class="col-lg-4 col-sm-12 ml-auto mr-auto">
                             <div class="card">
-                                <div class="card-header card-header-text card-header-info">
+                                <div class="card-header card-header-text card-header-danger">
                                     <div class="card-text">
                                         <h4 class="card-title">Teacher Routine</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <a href="{% url 'routine:departments_teachers' %}" class="btn btn-info">Go</a>
+                                    <a href="{% url 'routine:departments_teachers' %}" class="btn btn-outline">Go</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-12 ml-auto mr-auto">
                             <div class="card">
-                                <div class="card-header card-header-text card-header-info">
+                                <div class="card-header card-header-text card-header-danger">
                                     <div class="card-text">
                                         <h4 class="card-title">Student Routine</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <a href="{% url 'routine:departments' %}" class="btn btn-info">Go</a>
+                                    <a href="{% url 'routine:departments' %}" class="btn btn-outline">Go</a>
                                 </div>
                             </div>
                         </div>

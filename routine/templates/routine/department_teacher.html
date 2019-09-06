@@ -12,7 +12,7 @@
                 {% for departments in all_departments %}
                     <tr>
                         <td class="col-lg-2 ml-auto mr-auto">
-                            <a href="{% url 'routine:teachers' departments.id %}" class="btn btn-info btn-block"><i class="material-icons">account_balance</i> {{ departments.name }} </a>
+                            <a href="{% url 'routine:teachers' departments.id %}" class="btn btn-outline btn-block"><i class="material-icons">account_balance</i> {{ departments.name }} </a>
                         </td>
                     </tr>
                 {% endfor %}
