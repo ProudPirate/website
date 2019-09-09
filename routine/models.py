@@ -119,7 +119,7 @@ class RoutineDetails(models.Model):
 
     def __str__(self):
         grp_name = self.section_group.name if self.section_group is not None else 'All'
-        return '{0} : {1}'.format(self.subject.code, grp_name)
+        return '{0} : {1}'.format(self.subject.name, grp_name)
 
     def clean(self):
         if self.subject.is_lab == False:

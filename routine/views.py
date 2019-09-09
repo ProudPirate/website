@@ -32,7 +32,8 @@ def section_routine(request, sec_id):
     routine_details = RoutineDetails.objects.filter(routine__in=section.routines.all())\
                         .order_by('subject').distinct()
 
-    sub_teach = set(['{0} : {1}'.format(x.subject.code, x.taught_by.__str__()) for x in routine_details])
+    sub_teach = set(['{0} - {1}'.format(x.subject.name,
+                                        x.taught_by.__str__()) for x in routine_details])
 
     return render(request, 'routine/section_routine.html', {'routine_list': routine_list,
                                                             'periods': periods,
