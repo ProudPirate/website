@@ -1,3 +1,4 @@
+{#routine details#}
 {% extends 'routine/base.html' %}
 {% load static %}
 {% block content %}
@@ -46,13 +47,13 @@
             </tbody>
         </table>
         </br>
-    <div class="container ml-auto mr-auto">
-        <table class = "mr-auto ml-auto border-0">
-           {% for each in sub_teach %}
-               <tr>
-                   <b><td class=""> {{ each }} </td> </b>
-               </tr>
-            {% endfor %}
-        </table>
-    </div>
+        <div class="container ml-auto mr-auto">
+            <table class = "mr-auto ml-auto border-0">
+                {% for each in sub_teach %}
+                    <tr>
+                        <b><td class=""> {{ each }} </td> </b>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
 {% endblock %}

@@ -2,51 +2,149 @@
 {% extends 'dashboard/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="page-header header-filter" data-parallax="true" style="background-image: url('{% static 'images/College.JPG' %}')">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <div class="title text-center">
-                        <h1>Routine Management System</h1>
-                        <h3 class="brand text-center">Web Technology Mini Project</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="main main-raised">
-        <div class="container">
-            <div class="section text-center">
-                <div class="container">
-                    <div class="row">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{% static 'images/College.JPG' %}')">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 ml-auto mr-auto">
+				<div class="title text-center">
+					<h1 class="font-weight-bold">Routine Management System</h1>
+					{#Typing#}
+					<h3>
+						<div id="typing" class="typing"></div>
+					</h3>
+					<script type="text/javascript">
+						var typeString = ['Web Technology Mini Project',];
+						var  i = 0;
+						var count = 0
+						var selectedText = '';
+						var text = 'Hi';
+						(function type() {
+						if (count == typeString.length) {
+						count = 0;
+						}
+						selectedText = typeString[count];
+						text = selectedText.slice(0, ++i);
+						document.getElementById('typing').innerHTML = text;
+						if (text.length === selectedText.length) {
+						count++;
+						i = 0;
+						}
+						setTimeout(type, 200);
+						}());
 
-                        <div class="col-lg-4 col-sm-12 ml-auto mr-auto">
-                            <div class="card">
-                                <div class="card-header card-header-text card-header-danger">
-                                    <div class="card-text">
-                                        <h4 class="card-title">Teacher Routine</h4>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <a href="{% url 'routine:departments_teachers' %}" class="btn btn-outline">Go</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-12 ml-auto mr-auto">
-                            <div class="card">
-                                <div class="card-header card-header-text card-header-danger">
-                                    <div class="card-text">
-                                        <h4 class="card-title">Student Routine</h4>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <a href="{% url 'routine:departments' %}" class="btn btn-outline">Go</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+						function sleep(milliseconds) {
+						var start = new Date().getTime();
+						for (var i = 0; i < 1e7; i++) {
+						if ((new Date().getTime() - start) > milliseconds){
+						break;
+						}
+						}
+						}
+					</script>
+					{# <h3 class="brand text-center">Web Technology Mini Project</h3> #}
+					<h1 class="ml1">
+						<span class="text-wrapper">
+						<span class="line line1"></span>
+						<span class="letters text-info font-weight-bold">WELCOME</span>
+						<span class="line line2"></span>
+						</span>
+					</h1>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+					<script>
+						// Wrap every letter in a span
+						var textWrapper = document.querySelector('.ml1 .letters');
+						textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+						anime.timeline({loop: true})
+						.add({
+						targets: '.ml1 .letter',
+						scale: [0.3,1],
+						opacity: [0,1],
+						translateZ: 0,
+						easing: "easeOutExpo",
+						duration: 600,
+						delay: (el, i) => 70 * (i+1)
+						}).add({
+						targets: '.ml1 .line',
+						scaleX: [0,1],
+						opacity: [0.5,1],
+						easing: "easeOutExpo",
+						duration: 700,
+						offset: '-=875',
+						delay: (el, i, l) => 80 * (l - i)
+						}).add({
+						targets: '.ml1',
+						opacity: 0,
+						duration: 1000,
+						easing: "easeOutExpo",
+						delay: 1000
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main main-raised bg-light">
+	<div class="container">
+		<div class="section text-center">
+			<div class="container">
+				<div class="row">
+					<div class="ml-auto mr-auto ">
+                        <div class="card" style="background-color: #ffcdd2;">
+							<div class="card-header card-header-text card-header-danger">
+								<div class="card-text">
+									 <h4 class="font-weight-bold">SAMBHRAM INSTITUTE OF TECHNOLOGY (SAIT) </h4>
+								</div>
+							</div>
+
+                            <p class="text-justify text-dark ml-4 mr-4 mt-2 font-weight-bold">Sambhram Institute of Technology is an offshoot of the Sambhram Group, widely known for its services in education, health, housing, property development, hotels and resorts. Sambhram Education Trust is the educational arm of the Group and it runs several professional institutions in Bangalore, KGF in Karnataka state and Chittoor in Andhra Pradesh.</p>
+
+                            <p class="text-justify text-dark ml-4 mr-4 mt-2 font-weight-bold"> SaIT is a flagship Sambhram Institution started in 2001, promoted by entrepreneurs, bureaucrats and technocrats from a variety of backgrounds. Thanks to this strong management base and an equally strong resource base, SaIT enjoys a premier status today in technology education. As a result, students from far flung areas of India and other countries are entering the portals of SaIT in increasing numbers.</p>
+
+                            <p class="text-justify text-dark ml-4 mr-4 mt-2 font-weight-bold">SaIT is located in the silicon city, Bangalore, just a few kilometers from the internationally renowned Indian Institute of Science (IISC), and is well connected by road to all major city centers. It is very near to railway station and International Airport. The college is situated within the sprawling eight acres estate of Sambhram Education Trust. Set in an idyllic atmosphere rich in greenery, the campus is ideal for academic, research, cultural and sports activities. The college building housing the class rooms, laboratories, workshops, administrative blocks, Libraries , Cafeteria and other units.</p>
+
+                            <p class="text-justify text-dark ml-4 mr-4 mt-2 font-weight-bold"> SaIT since from its inception achieved several mile stones. At present SaIT has got engineering branches with an intake of 180 in Computer Sc. & Engineering, Electronics & Commn. Engineering, Mechanical Engineering and Civil Engineering. SaIT has an intake of 120 for Information Sc. & Engineering, MCA and MBA. From 2010-11 academic years II Shift course with intake of 60 each in Electronics & communication engg and Computer Sc. & Engineering. Mechanical and Civil engineering has been started. In during 2009 the departments of ECE, CSE and ISE and in 2011 departments of Mechanical.</p>
+
     </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main main-raised">
+	<div class="container">
+		<div class="section text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-sm-12 ml-auto mr-auto">
+						<div class="card">
+							<div class="card-header card-header-text card-header-danger">
+								<div class="card-text">
+									<h4 class="card-title">Teacher Routine</h4>
+								</div>
+							</div>
+							<div class="card-body">
+								<a href="{% url 'routine:departments_teachers' %}" class="btn btn-outline">View</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-12 ml-auto mr-auto">
+						<div class="card">
+							<div class="card-header card-header-text card-header-danger">
+								<div class="card-text">
+									<h4 class="card-title">Student Routine</h4>
+								</div>
+							</div>
+							<div class="card-body">
+								<a href="{% url 'routine:departments' %}" class="btn btn-outline">View</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
