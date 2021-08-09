@@ -73,7 +73,7 @@ python-dateutil==2.7.3
 python-openid==2.2.5
 python3-openid==3.1.0
 pytz==2019.3
-pywin32==225
+pywin32==301
 pywinpty==0.5.5
 pyzmq==18.1.0
 requests==2.22.0
